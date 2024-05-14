@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Workspace</title>
+  <style>
+  body{
+    width: 95%;
+    margin-left:auto;
+    margin-right: auto;
+    display: block;
+  }
+  * {
+      box-sizing: border-box;
+    }
+    .points{
+      color: white;
+      font-size: 105%;
+      font-weight: bolder;
+      background: black;
+    }
+     .style{
+      color: firebrick;
+    }
+     .tags{
+      font-weight: bolder;
+      color: green;
+    } 
+    .container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    button {
+      font-family: sans-serif;
+      border-radius: 100px 30px;
+      padding: 15px 30px;
+      font-size: 105%;
+      
+      margin: 10px;
+      -webkit-transition-duration: 1s; /* for Safari */
+      transition-duration: 1s;
+       margin-left: auto;
+       margin-right: auto;
+       display: block;
+       z-index: 5;
+    }
+    #button1 {
+      background-color: rgba(50, 12, 200, 0.5);
+      color: lawngreen;
+      box-shadow: 0px 4px 10px 0px rgba(200, 18, 119, 0.8);
+      z-index: 2;
+    }
+  
+    #button1:hover {
+      background-color: #f8f9f9;
+      color: rgb(23, 52, 89);
+      box-shadow: 1px 1px 2px 3px rgba(0,50,0,0.22);
+      cursor: pointer;
+    }
+  
+    .tooltip {
+      position: relative; /* helps position the tooltip content */
+      border-bottom: 1px solid black;
+      font-size: 122%;
+      color: blue;
+      font-weight: bold;
+    }
+    .tooltip-content {
+      color: white;
+      background: black;
+      padding: 3px
+      border-radius: 5px;
+      opacity: 0; /* fully transparent (hidden) */
+      transition-duration: 1s; /* duration of the fade in effect */
+    
+      /* positions the tooltip content */
+      position: absolute;
+      z-index: 1;
+      text-align: center;
+      width:50%;
+      top: -3px; /* border-width x -1 */
+      left: 58%;
+      font-size: 120%;
+    }
+    .tooltip:hover > .tooltip-content {
+      opacity: 1; /* fully opaque (fully visible) */
+    }
+    .tooltip > .tooltip-content::after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -5px;
+      border: 5px solid transparent;
+      border-right-color: black;
+    }
+    .h1,.h2{
+     text-align: center;
+    }
+       .image-container {
+      margin: 0 auto; /* center the image containers */
+      width: 25%;
+      height: 25%;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22); /* material box shadow */
+      margin-bottom: 20px;
+      transition-duration: 1s;
+      max-height: 25%;
+    }
+    .image-container:hover {
+      width: 10%;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.30), 0 14px 11px rgba(0,0,0,0.22);
+    }
+    /* make the images responsive */
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .image-description {
+      padding: 0 15px 15px 15px;
+      text-align: center;
+      font-size: 130%;
+      font-weight: bold; 
+    }
+    
+    /* lightbox stylesheet */
+    .lightbox {
+      display: table; /* helps us center the lightbox-content */
+      transition-duration: 1s; /* duration of the fade in effect */
+    
+      /* make the lightbox occupy the entire page */
+      position: fixed;
+      top: -150%; /* hide the lightbox above the top edge */
+      left: 0;
+      width: 100%;
+      height: 90%;
+      background: rgba(0, 0, 0, 0.7); /* black with 0.7 opacity */
+    }
+    .lightbox:target {
+      top: 0; /* make the lightbox cover the entire page */
+    }
+    .lightbox-content {
+      display: table-cell;
+      vertical-align: middle; /* vertically center */
+      text-align: center; /* horizontally center */
+    }
+    .close {
+      /* position the CLOSE button to the top-right corner */
+      position: absolute;
+      top: 1px;
+      right: 20px;
+      z-index: 25;
+      /* style the close button */
+      font-size: 150%;
+      font-weight: bolder;
+      text-decoration: none;
+      color: white;
+    }
+    
+    /* make the image responsive */
+    .lightbox img {
+      max-width: 90%;
+      height: 90%;
+      border-radius: 10px;
+    }
+    .eg{
+      color: blue;
+      font-size: 105%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="tooltip"> Play and listen to me!
+      <span class="tooltip-content"> Audio here </span>
+
+
+  <audio controls autoplay>
+  <source src="alrightworkiframe.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+    </span>
+  </div>
+<p style="margin-bottom: 0">Alright, welcome to have a view of how to go about the portfolio design using the ideas of all we learned on Html and CSS.</p>
+<h4>Steps To Solve The Trial Question.</h4>
+<p>
+  So let's get started, so first thing you need to do is create a folder on your PC or inside your text editor on your mobile devices. <br>
+  Now read the question given to you carefully and make sure you understand it, so as you can be able to pick out the key points in the question.
+</p>
+<p>
+  Alright, so now let's pick out the key points out and jot them down. <br>
+  
+  <ol style="margin-right: 5px; margin-left: 0; padding-left: 15px">
+    <b>We're asked to create three different Html files:</b>
+    <li>First Hrml file named <b>index.html</b></li>
+    <li>Second Html file named <b>portfolio.html</b></li>
+    <li>Third Html file named <b>contact.html</b></li>
+   <b> Things we were asked to do with the first Html file:</b>
+    <ol type="a" style="">
+      
+      <li>On the heading of the page, we were asked to populate on it our Name and logo. </li>
+      <li>We we're asked to create a navigation bar and populate on it three links, Linking the use to all the three Html files we were asked to create.</li>
+      <li>
+        We were asked to populate on it a Welcome message and then we should go ahead and add information concerning our skills.
+      </li>
+    </ol>
+    <b>Things we were asked to do with the second Html file:</b>
+    <ol type="a">
+      <li>We were asked design a Gallery of a small version of a larger images, demonstrating our works.</li>
+      <li>We were asked to design a link to take us back to the previous page, that's to the index.html page.</li>
+    </ol>
+    <b>Things we were asked to do with the Third Html file:</b>
+    <ol type="a">
+      <li>We were asked to design a form in this case contact form</li>
+      <li>Since the second information is optional so let's leave it.</li>
+      <li>We were asked to design a Submit button.</li>
+    </ol>
+    <li>We were also asked to style our Html files with inline Style Sheet.</li>
+  </ol>
+  <br />
+  Alright, so the above are the key informations in the question. <br>
+  So under normal circumstances when you're able to note the key points down, then you're through to go with your design phase.
+</p>
+<p>
+ <h4>Let's now start the Design process:</h4>
+ <ul> 
+ <b>The below is for PC users</b>
+   <li>Open the folder you have created on your PC and create the following new Html file in it: <b>index.html, portfolio.html and contact.html</b> and save them respectively.</li>
+   <li>In the same folder where you have created you Html files right click on the index.html file, to open the context menu for you.<br>
+   From the context menu select open with, from the pop-up menu choose the text editor you have installed on your PC, by so doing  it will open your index.html file your text editor.<br>
+   </li>
+   <li>As you're having your Html file opened in your text editor, check whether you have the basic structure of Html on the interface, else populate it your self.</li>
+ </ul>
+<ul>
+  <b>The below is for mobile devices users.</b>
+  <li>Open your TrebEdit text editor and click the plus icon against the folder you have created.</li>
+  <li>From the pop-up menu click on new file and in the text area where you will input the name of the file you want, type <b>index.html</b> there and click the save button.</li>
+  <li>After saving your Html file click on it to open it's interface for you now populate on it the basic structure of Html.</li>
+</ul>
+<b class="eg">Note:</b> Anytime you want to create a any new type of file follow those steps. <br>
+So use the above steps to create the rest of the HTML files that's <b>portfolio.html and contact.html</b>.
+</p>
+<p>
+  <h4>Let's start coding:</h4>
+  <b class="eg">Note:</b> We're starting the coding with the index.html
+  <ul>
+    <li>Make sure your index.html file is opened in your text editor and you have the basic structure of Html too in it.</li>
+    <li>Inside the opening and closing tag in the basic structure type in to it <b>" Home page "</b>. <br>
+    Apply the above information to the rest of the HTML files.
+    </li>
+    <li>Copy and paste the below html codes into the opening and closing tag of the body element of your index.html file work space.</li>
+    
+  </ul>
+</p>
+
+<div>
+  <iframe src="preindex.html" style="height:350px;width:98%; border-radius: 20px; border-color: greenyellow; max-width: 98%" title="Iframe Example">
+  </iframe> <br>
+  
+  <p>The above Html source codes inside the iframe is what you will  use to design <b>The navigation bar of the index.html file</b>, <b>The heading section of the index.html page.</b> and <b>Our Welcome message and Information concerning our skills.</b>
+  </p>
+
+</div>
+
+<br>
+<br>
+
+     <div class="gallery">
+  
+     <div class="image-container" id="container4">
+      <a href="#image4"><img src="output.jpg"></a>
+    </div>
+      <p class="image-description"> Click On or Hover Over  The Image Above To Have A Full View Of The Output Of The Source Codes.</p>
+      <p> </p>
+  
+  </div>
+  <div>
+    <b>Now, let's move on to applying styles to the above HTML document using CSS.</b> <br>
+<b class="eg">Note:</b> Since at our level or in view of the WASSCE we will only make use of the <b>Inline Style Sheet</b>, So let's check it out below.
+<iframe src="preindex2.html" style="height:250px;width:98%; border-radius: 20px; border-color: greenyellow" title="Iframe Example">
+  </iframe> <br>
+  <p>The above Html and Inline CSS source codes inside the iframe is what you will use to design The navigation bar of the index.html file, The heading section of the index.html page. and Our Welcome message and Information concerning our skills. <br>
+  <b class="eg">Note:</b> The above source codes are the final codes you will use to design and style the <b>Home page (" index.html "). </b></p>
+  <p>And wben you compare the two web page in the iframe you will see the difference.</p>
+       <div class="gallery">
+  
+     <div class="image-container" id="container4">
+      <a href="#image3"><img src="output1.jpg"></a>
+    </div>
+      <p class="image-description"> Click On or Hover Over The Image Above To Have A Full View Of The  Output Of The Final Source Codes.</p>
+      <p> </p>
+  
+  </div>
+  <fieldset>
+    <legend><span>Let's break down the code step by step, explaining each section in detail:</span></legend>
+    <ul>
+      <li><b class="points">*Style Section*:</b>    <b class="tags">&lt;style&gt;</b>
+   <b class="style">
+     .head::after{
+    content: "";
+    display: block;
+    clear: both;
+            }
+   </b>
+   <b class="tags">&lt;/style&gt;</b>
+   <br>
+   This is a CSS stylesheet that targets an HTML element with the class <b class="tags">head</b>. The <b class="style">::after</b> pseudo-element is used to add content after the element. <br>
+   <b class="eg">Note:</b> <ul> <li>The <b class="style"> content=""</b> CSS property adds an empty content, which is necessary for the pseudo-element to work. </li>
+   <li>The <b class="style">display: block;</b> CSS property with it's value makes the pseudo-element a block element, taking up the full width of its parent element.</li>
+   <li>The <b class="style">clear:both;</b> CSS property with it's value clears both the left and right sides of the element, ensuring that no other elements are positioned next to it.</li>
+   </ul>
+   <li><b class="points">*Navigation Bar*</b> This div element has the class <b class="tags">nav-bar</b> and several inline styles: 
+   <b class="eg">Note:</b>
+   <ul>
+     <li>The <b class="style">width: 95%;</b> sets the width of the navigation bar to 95% of its parent element's width.</li>
+     <li>The <b class="style">float: left;</b> makes the navigation bar float to the left, allowing other elements to position next to it.</li>
+     <li>The <b class="style">margin-left: 5px;</b> adds a margin of 5 pixels to the left side.</li>
+     <li>The <b class="style">z-index: 999;</b> sets the z-index (stacking order) to 999, ensuring that the navigation bar is on top of other elements.</li>
+     <li>The <b class="style">height: 10px;</b> sets the height of the navigation bar to 10 pixels.</li>
+     <li>The <b class="style">padding: 0;</b> removes padding from the navigation bar.</li>
+     <li>The <b class="style">margin-right: 0;</b> removes margin from the right side.</li>
+   </ul>
+   Hence <b class="tags">div</b> containing the class <b class="tags">class="nav-bar"</b> serves as a container for the link elements.
+   <br>
+   <!-- the below codes needs remodification -->
+   <b class="points">Navigation Links:</b> Each navigation link (a element) has several inline styles:
+
+- `text-decoration: none` removes underlines from the link text.
+- `color: white` sets the text color to white.
+- `list-style-type: none` removes bullet points from the link.
+- `font-weight: bolder` makes the font bold.
+- `border-radius: 20px 10px` adds a rounded corner effect to the link.
+- `background: blue` sets the background color to blue.
+- `onmouseover` changes the background color to light blue and text color to blue when hovered over.
+<br>
+<p>
+  <b class="points">*Head Section*:</b> This div element has the class "head" and several inline styles:
+
+- `background: greenyellow` sets the background color to green yellow.
+- `border-radius: 30px` adds a rounded corner effect.
+- `box-shadow: 2.5px 3.5px 5px` adds a box shadow effect.
+</p>
+<p>
+  <b class="points">*Head Name and Logo*</b> - `width: 50%` sets the width of the head name to 50% of its parent element's width.
+- `float: left` makes the head name float to the left.
+- `font-size: 105%` increases the font size of the head name to 105% of the default size. <br>
+<b class="points">*Logo*</b> - `width: 100%` sets the width of the head logo to 100% of its parent element's width. <br>
+- `width: 50%` sets the width of the logo image to 50% of its parent element's width. <br>
+- `margin-top: 10px` adds a margin of 10 pixels to the top of the logo image. 
+</p>
+<p>
+  <b class="points">*Main Section*</b> This div element has the class "main" and several inline styles: <br>
+
+- `background: lightseagreen` sets the background color to light sea green. <br>
+- `border-radius: 25px` adds a rounded corner effect. <br>
+- `position: center` centers the element (not supported in all browsers). <br>
+`padding: 0` removes padding from the main section. <br>
+
+`box-shadow: 2px 3px 4px` adds a box shadow effect. <br>
+<b class="points">_Welcome Message and Skills Showcase_</b>
+- `font-size: 105%` increases the font size of the welcome message to 105% of the default size. <br>
+- `margin-left: 15px` adds a margin of 15 pixels to the left of the welcome message.
+</p>
+
+   </li>
+   </li>
+    </ul>
+  </fieldset>
+  </div>
+    <div>
+           <p style="text-align: center; font-size: 115%; color: deepskyblue">Click the Button below <br> to take you to the Portfolio page Work space</p>
+<a href="workport.html">
+<button id="button1"> Button </button>
+</a>
+  </div>
+  
+  <div class="lightbox" id="image4">
+    <a href="#container4" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="output.jpg" >
+    </div>
+  </div>
+    <div class="lightbox" id="image3">
+    <a href="#container4" class="close">CLOSE</a>
+    <div class="lightbox-content">
+      <img src="output1.jpg" >
+    </div>
+  </div>
+</body>
+</html>
